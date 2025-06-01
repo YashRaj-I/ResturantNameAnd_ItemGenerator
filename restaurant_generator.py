@@ -4,10 +4,12 @@ import google.generativeai as genai
 from langchain_core.prompts import PromptTemplate
 
 api_key_path = r"C:\Users\Asus\Documents\RestaurantNameGenerator\GeminiapiKey.env"
-# Load and configure API
+from dotenv import load_dotenv
+import os
+
 def configure_gemini(api_key_path):
-    with open(api_key_path) as f:
-        api_key = f.read().strip()
+    load_dotenv(api_key_path)
+    api_key = os.getenv("API_KEY")
     genai.configure(api_key=api_key)
     return genai.GenerativeModel('gemini-1.5-flash')
 
