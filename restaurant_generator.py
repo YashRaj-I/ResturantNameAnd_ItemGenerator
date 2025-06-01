@@ -3,6 +3,7 @@
 import google.generativeai as genai
 from langchain_core.prompts import PromptTemplate
 
+api_key_path = r"C:\Users\Asus\Documents\RestaurantNameGenerator\GeminiapiKey.env"
 # Load and configure API
 def configure_gemini(api_key_path):
     with open(api_key_path) as f:
